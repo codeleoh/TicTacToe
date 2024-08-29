@@ -9,5 +9,16 @@ let warning = '';
 let playing = false;
 
 // Eventos 
+document.querySelector('.reset').addEventListener('click', reset);
 
 // Funções
+function reset() {
+    warning = '';
+
+    let random = Math.floor(Math.random() * 2);
+    if(random === 0) {
+        player = 'x';
+    } else {
+        player = 'o';
+    }
+}
