@@ -12,8 +12,16 @@ reset();
 
 // Eventos 
 document.querySelector('.reset').addEventListener('click', reset);
+document.querySelectorAll('.item').forEach(item => {
+    item.addEventListener('click', itemClick);
+});
 
 // Funções
+function itemClick(event) {
+    let item = event.target.getAttribute('data-item');
+    console.log(`Clicou em ${item}`);
+}
+
 function reset() {
     warning = '';
 
