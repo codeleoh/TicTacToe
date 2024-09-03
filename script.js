@@ -38,5 +38,6 @@ function renderSquare() {
 }
 
 function renderInfo() {
-
+    document.querySelector('.vez').innerHTML = player;
+    document.querySelector('.resultado').innerHTML = warning;
 }
