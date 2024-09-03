@@ -8,6 +8,8 @@ let player = '';
 let warning = '';
 let playing = false;
 
+reset();
+
 // Eventos 
 document.querySelector('.reset').addEventListener('click', reset);
 
@@ -18,9 +20,23 @@ function reset() {
     let random = Math.floor(Math.random() * 2);
     player = (random === 0) ? 'x' : 'o';
 
-    for (let item in square) {
-        square[item] = '';
+    for (let i in square) {
+        square[i] = '';
     }
 
     playing = true;
+
+    renderSquare();
+    renderInfo();
+}
+
+function renderSquare() {
+    for (let i in square){
+        let item = document.querySelector(`div[data-item=${i}]`)
+        item.innerHTML = square[i];
+    }
+}
+
+function renderInfo() {
+
 }
