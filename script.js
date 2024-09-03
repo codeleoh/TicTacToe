@@ -16,9 +16,11 @@ function reset() {
     warning = '';
 
     let random = Math.floor(Math.random() * 2);
-    if(random === 0) {
-        player = 'x';
-    } else {
-        player = 'o';
+    player = (random === 0) ? 'x' : 'o';
+
+    for (let item in square) {
+        square[item] = '';
     }
+
+    playing = true;
 }
