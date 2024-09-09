@@ -19,7 +19,11 @@ document.querySelectorAll('.item').forEach(item => {
 // Funções
 function itemClick(event) {
     let item = event.target.getAttribute('data-item');
-    console.log(`Clicou em ${item}`);
+    if(square[item] === '') {
+        square[item] = player;
+        renderSquare();
+        toglePlayer();
+    }
 }
 
 function reset() {
@@ -43,9 +47,20 @@ function renderSquare() {
         let item = document.querySelector(`div[data-item=${i}]`)
         item.innerHTML = square[i];
     }
+
+    checkGame();
 }
 
 function renderInfo() {
     document.querySelector('.vez').innerHTML = player;
     document.querySelector('.resultado').innerHTML = warning;
+}
+
+function toglePlayer() {
+    player = (player === 'x') ? 'o' : 'x';
+    renderInfo();
+}
+
+function checkGame() {
+    
 }
