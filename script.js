@@ -62,5 +62,18 @@ function toglePlayer() {
 }
 
 function checkGame() {
+    if(checkWinnerfor('x')){
+        warning = 'O "x" venceu';
+        playing = false;
+    } else if(checkWinnerfor('o')) {
+        warning = 'O "O" venceu';
+        playing = false;
+    } else if(isFull()) {
+        warning = 'Deu empate';
+        playing = false;
+    }
+}
+
+function checkWinnerfor(player) {
     
 }
