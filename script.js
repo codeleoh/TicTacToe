@@ -19,7 +19,7 @@ document.querySelectorAll('.item').forEach(item => {
 // Funções
 function itemClick(event) {
     let item = event.target.getAttribute('data-item');
-    if(square[item] === '') {
+    if(playing && square[item] === '') {
         square[item] = player;
         renderSquare();
         toglePlayer();
@@ -66,7 +66,7 @@ function checkGame() {
         warning = 'O "x" venceu';
         playing = false;
     } else if(checkWinnerfor('o')) {
-        warning = 'O "O" venceu';
+        warning = 'O "o" venceu';
         playing = false;
     } else if(isFull()) {
         warning = 'Deu empate';
